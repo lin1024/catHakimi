@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐱 猫咪行业影响力与价值数据统计</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">🐱 猫经济数据统计</div>
+            <ul class="nav-links">
+                <li><a href="#overview">总览</a></li>
+                <li><a href="#market">市场规模</a></li>
+                <li><a href="#social">社交媒体</a></li>
+                <li><a href="#industry">产业链</a></li>
+                <li><a href="#ip">IP商业</a></li>
+                <li><a href="#welfare">社会公益</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="菜单">☰</button>
+        </div>
+    </nav>
+
+    <!-- ========== Hero 总览区 ========== -->
+    <section class="hero" id="overview">
+        <div class="hero-bg-paws"></div>
+        <div class="hero-content">
+            <p class="hero-badge">📋 基于 Wikipedia · 百度百科 · 行业报告数据</p>
+            <h1 class="hero-title">猫咪在社会行业的<br><span class="highlight">影响力与价值</span>分析</h1>
+            <p class="hero-subtitle">全球约 <strong>6 亿只</strong> 家猫，构建了一个横跨食品、医疗、传媒、文旅、品牌授权的超级产业生态</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="stat-icon">🐈</div>
+                    <div class="stat-value-wrap">
+                        <span class="stat-number" id="count1">6</span><span class="stat-unit">亿只</span>
+                    </div>
+                    <span class="stat-label">全球家猫数量</span>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-icon">🛒</div>
+                    <div class="stat-value-wrap">
+                        <span class="stat-number" id="count2">1132</span><span class="stat-unit">亿美元</span>
+                    </div>
+                    <span class="stat-label">全球宠物食品市场</span>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-icon">🇨🇳</div>
+                    <div class="stat-value-wrap">
+                        <span class="stat-number" id="count3">5800</span><span class="stat-unit">万只</span>
+                    </div>
+                    <span class="stat-label">中国宠物猫数量</span>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-icon">🖼️</div>
+                    <div class="stat-value-wrap">
+                        <span class="stat-number" id="count4">65</span><span class="stat-unit">亿张</span>
+                    </div>
+                    <span class="stat-label">互联网猫图片总量</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>向下滚动探索</span>
+            <span class="scroll-arrow">↓</span>
+        </div>
+    </section>
+
+    <!-- ========== 全球市场规模 ========== -->
+    <section class="section" id="market">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">📊</span> 全球宠物市场规模
+            </h2>
+            <p class="section-desc">全球宠物食品市场2024年预测规模达1132亿美元，中国宠物市场8年增长超8倍</p>
+
+            <div class="dashboard-grid cols-2">
+                <!-- 卡片1：全球宠物食品市场增长 -->
+                <div class="card">
+                    <h3 class="card-title">📈 全球宠物食品市场增长趋势</h3>
+                    <p class="card-subtitle">2019年 → 2024年预测</p>
+                    <div class="chart-wrapper">
+                        <canvas id="petFoodChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 卡片2：各国猫数量柱状图 -->
+                <div class="card">
+                    <h3 class="card-title">🌍 各国宠物猫数量对比（万只）</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="catCountChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 卡片3：中国宠物市场增长 -->
+                <div class="card">
+                    <h3 class="card-title">🇨🇳 中国宠物市场增长（亿美元）</h3>
+                    <p class="card-subtitle">2010年 → 2018年，8年增长超8倍</p>
+                    <div class="chart-wrapper">
+                        <canvas id="chinaMarketChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 卡片4：猫粮市场数据卡片 -->
+                <div class="card">
+                    <h3 class="card-title">🍖 猫粮市场核心数据</h3>
+                    <div class="info-grid-4">
+                        <div class="info-card">
+                            <span class="info-value accent-orange">870.9亿$</span>
+                            <span class="info-label">2019年全球规模</span>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-value accent-green">1132亿$</span>
+                            <span class="info-label">2024年预测规模</span>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-value accent-blue">282.3亿$</span>
+                            <span class="info-label">2016年美国销售额</span>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-value accent-purple">+25%</span>
+                            <span class="info-label">在线销售年增长率</span>
+                        </div>
+                    </div>
+                    <div class="info-extra">
+                        <p>🏢 <strong>行业领军企业：</strong>Mars（宠物护理年收入约170亿美元）、Nestlé Purina、Hill's Pet Nutrition、Blue Buffalo</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 宠物医疗与保险 -->
+            <div class="subsection-card">
+                <h3 class="card-title">🏥 宠物医疗与保险</h3>
+                <div class="info-grid-3">
+                    <div class="info-card highlight">
+                        <span class="info-large">1368亿$</span>
+                        <span class="info-label">2022年美国宠物总支出</span>
+                        <span class="info-trend up">较2021年增长约11%</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-large accent-green">+125%</span>
+                        <span class="info-label">美国投保宠物增长率（2018年起）</span>
+                        <span class="info-note">目前投保覆盖率不到5%</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-large accent-blue">23%</span>
+                        <span class="info-label">英国宠物保险覆盖率</span>
+                        <span class="info-note">瑞典覆盖率为全球最高</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 社交媒体影响力 ========== -->
+    <section class="section section-dark" id="social">
+        <div class="container">
+            <h2 class="section-title dark">
+                <span class="title-icon">📱</span> 猫咪在社交媒体中的影响力
+            </h2>
+            <p class="section-desc dark">猫咪是互联网上被观看次数最多的内容类型之一，被《纽约时报》称为"互联网的基本构建块"</p>
+
+            <div class="dashboard-grid cols-2">
+                <!-- YouTube 数据图 -->
+                <div class="card card-dark">
+                    <h3 class="card-title">🎬 YouTube 猫咪内容统计</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="youtubeCatChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 社交媒体核心指标 -->
+                <div class="card card-dark">
+                    <h3 class="card-title">📊 社交媒体核心指标</h3>
+                    <div class="social-indicators">
+                        <div class="social-row">
+                            <div class="social-icon-bg">🎬</div>
+                            <div class="social-info">
+                                <span class="social-value">200万+</span>
+                                <span class="social-desc">YouTube 猫视频总量（2015年）</span>
+                            </div>
+                        </div>
+                        <div class="social-row">
+                            <div class="social-icon-bg">👁️</div>
+                            <div class="social-info">
+                                <span class="social-value">12,000次</span>
+                                <span class="social-desc">单支猫视频平均观看量（高于任何其他品类）</span>
+                            </div>
+                        </div>
+                        <div class="social-row">
+                            <div class="social-icon-bg">🖼️</div>
+                            <div class="social-info">
+                                <span class="social-value">65亿张</span>
+                                <span class="social-desc">互联网猫图片估计总量（2015年）</span>
+                            </div>
+                        </div>
+                        <div class="social-row">
+                            <div class="social-icon-bg">🌐</div>
+                            <div class="social-info">
+                                <span class="social-value">1亿+</span>
+                                <span class="social-desc">Cheezburger 网站月访问量</span>
+                            </div>
+                        </div>
+                        <div class="social-row">
+                            <div class="social-icon-bg">📸</div>
+                            <div class="social-info">
+                                <span class="social-value">259万+</span>
+                                <span class="social-desc">Flickr 用户手动标注猫图片</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 网红猫卡片 -->
+            <div class="subsection">
+                <h3 class="subsection-title dark">🌟 著名"网红猫"商业价值一览</h3>
+                <div class="famous-cats-grid">
+                    <div class="famous-cat-card">
+                        <div class="cat-card-header">
+                            <span class="cat-emoji">😾</span>
+                            <div>
+                                <h4>Grumpy Cat</h4>
+                                <small>不爽猫（2012-2019）</small>
+                            </div>
+                        </div>
+                        <div class="cat-card-body">
+                            <div class="cat-metric">
+                                <span class="metric-label">FB粉丝</span>
+                                <span class="metric-value">830万</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">IG粉丝</span>
+                                <span class="metric-value">250万</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">授权商品</span>
+                                <span class="metric-value">1,082种</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">品牌估值</span>
+                                <span class="metric-value">≈1亿$</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">侵权获赔</span>
+                                <span class="metric-value">71万$</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">影视作品</span>
+                                <span class="metric-value">Lifetime电影</span>
+                            </div>
+                        </div>
+                        <div class="cat-card-footer">
+                            📖 纽约时报畅销书第3位 · 8项注册商标
+                        </div>
+                    </div>
+
+                    <div class="famous-cat-card">
+                        <div class="cat-card-header">
+                            <span class="cat-emoji">🌈</span>
+                            <div>
+                                <h4>Nyan Cat</h4>
+                                <small>像素彩虹猫</small>
+                            </div>
+                        </div>
+                        <div class="cat-card-body">
+                            <div class="cat-metric">
+                                <span class="metric-label">风格</span>
+                                <span class="metric-value">8-bit像素</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">传播方式</span>
+                                <span class="metric-value">病毒GIF</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">衍生游戏</span>
+                                <span class="metric-value">多平台</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">NFT销售额</span>
+                                <span class="metric-value">>60万$</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">地位</span>
+                                <span class="metric-value">Meme鼻祖</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">文化影响</span>
+                                <span class="metric-value">全球认知</span>
+                            </div>
+                        </div>
+                        <div class="cat-card-footer">
+                            🎵 同名音乐 · 持续10年+文化符号
+                        </div>
+                    </div>
+
+                    <div class="famous-cat-card">
+                        <div class="cat-card-header">
+                            <span class="cat-emoji">😺</span>
+                            <div>
+                                <h4>Lil Bub</h4>
+                                <small>基因突变明星猫</small>
+                            </div>
+                        </div>
+                        <div class="cat-card-body">
+                            <div class="cat-metric">
+                                <span class="metric-label">特征</span>
+                                <span class="metric-value">独特外观</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">慈善募捐</span>
+                                <span class="metric-value">>30万$</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">出版物</span>
+                                <span class="metric-value">畅销书</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">纪录片</span>
+                                <span class="metric-value">翠贝卡电影节</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">代言</span>
+                                <span class="metric-value">多品牌</span>
+                            </div>
+                            <div class="cat-metric">
+                                <span class="metric-label">公益影响</span>
+                                <span class="metric-value">动物福利</span>
+                            </div>
+                        </div>
+                        <div class="cat-card-footer">
+                            🎗️ 特殊需求宠物倡导 · 激励全球
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 心理研究 -->
+            <div class="research-note">
+                <h4>🧠 学术研究发现</h4>
+                <p>观看猫视频后参与者感到<strong>更快乐</strong>，正面情绪提升、负面情绪减少。观看在线猫媒体与<strong>积极情绪</strong>相关，甚至可作为数字疗法或减压方式。人们发布猫照片的概率是发布自拍的<strong>两倍以上</strong>。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 产业链价值 ========== -->
+    <section class="section" id="industry">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">🔗</span> 猫咪产业链价值拆解
+            </h2>
+            <p class="section-desc">从繁育、食品、医疗到保险，猫咪经济已形成完整的上中下游产业链</p>
+
+            <!-- 产业链可视化 -->
+            <div class="industry-chain">
+                <div class="chain-row">
+                    <div class="chain-block chain-upstream">
+                        <div class="chain-header">🏭 上游</div>
+                        <div class="chain-tags">
+                            <span>猫繁育与品种</span>
+                            <span>宠物医疗研发</span>
+                            <span>宠物药品/疫苗</span>
+                        </div>
+                    </div>
+                    <div class="chain-connector">▶</div>
+                    <div class="chain-block chain-midstream">
+                        <div class="chain-header">⚙️ 中游</div>
+                        <div class="chain-tags">
+                            <span>猫粮/零食生产</span>
+                            <span>猫砂/猫用品</span>
+                            <span>品牌IP运营</span>
+                            <span>智能猫设备IoT</span>
+                            <span>宠物保险金融</span>
+                        </div>
+                    </div>
+                    <div class="chain-connector">▶</div>
+                    <div class="chain-block chain-downstream">
+                        <div class="chain-header">🏪 下游</div>
+                        <div class="chain-tags">
+                            <span>宠物零售店</span>
+                            <span>宠物医院</span>
+                            <span>猫咖/主题乐园</span>
+                            <span>电商平台</span>
+                            <span>殡葬/寄养</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid cols-2">
+                <!-- 细分市场饼图 -->
+                <div class="card">
+                    <h3 class="card-title">🥧 核心细分市场分布</h3>
+                    <div class="chart-wrapper chart-pie">
+                        <canvas id="marketPieChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 细分市场表格 -->
+                <div class="card">
+                    <h3 class="card-title">📋 细分市场估值与趋势</h3>
+                    <div class="market-table-wrap">
+                        <table class="market-table">
+                            <thead>
+                                <tr>
+                                    <th>细分领域</th>
+                                    <th>规模/增长</th>
+                                    <th>关键趋势</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>🍖 猫粮</td>
+                                    <td>占全球870亿$主要部分</td>
+                                    <td>高端化、天然有机、功能配方</td>
+                                </tr>
+                                <tr>
+                                    <td>🧹 猫砂与清洁</td>
+                                    <td>刚需品类</td>
+                                    <td>环保可降解、智能猫砂盆</td>
+                                </tr>
+                                <tr>
+                                    <td>🏥 宠物医疗</td>
+                                    <td>美国年超千亿美元</td>
+                                    <td>专科化、保险覆盖、远程医疗</td>
+                                </tr>
+                                <tr>
+                                    <td>☕ 猫咖文化</td>
+                                    <td>全球超百家、东京58家</td>
+                                    <td>亚洲向欧美扩散</td>
+                                </tr>
+                                <tr>
+                                    <td>📱 智能猫设备</td>
+                                    <td>新兴高速品类</td>
+                                    <td>自动喂食、GPS追踪、AI健康</td>
+                                </tr>
+                                <tr>
+                                    <td>🎨 猫咪IP授权</td>
+                                    <td>Hello Kitty年80亿$</td>
+                                    <td>品牌授权最成功案例之一</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 猫咖时间线 -->
+            <div class="subsection-card">
+                <h3 class="card-title">☕ 猫咖——全球新型商业空间发展史</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-year">1998</span>
+                        <span class="timeline-dot"></span>
+                        <span class="timeline-text">全球首家猫咖「猫花园」在<b>台北</b>开业</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2004</span>
+                        <span class="timeline-dot"></span>
+                        <span class="timeline-text">日本首家猫咖「Neko no Jikan」在<b>大阪</b>开业</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2005-2010</span>
+                        <span class="timeline-dot"></span>
+                        <span class="timeline-text">日本新开<b>79家</b>猫咖</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2010s</span>
+                        <span class="timeline-dot"></span>
+                        <span class="timeline-text">向<b>全球扩散</b>：比利时、法国、德国、荷兰、阿联酋、英国、美国</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2015</span>
+                        <span class="timeline-dot"></span>
+                        <span class="timeline-text">"cat café"被收录进<b>牛津英语词典</b></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== IP商业化 ========== -->
+    <section class="section section-dark" id="ip">
+        <div class="container">
+            <h2 class="section-title dark">
+                <span class="title-icon">💎</span> 猫咪IP商业化经典案例
+            </h2>
+            <p class="section-desc dark">从 Hello Kitty 年80亿美元零售额到 Grumpy Cat 草根IP奇迹，猫咪持续创造商业传奇</p>
+
+            <!-- Hello Kitty 大卡片 -->
+            <div class="highlight-card">
+                <div class="highlight-header">
+                    <span class="hl-emoji">🎀</span>
+                    <div>
+                        <h3>Hello Kitty — 全球最成功的猫IP</h3>
+                        <span class="hl-sub">三丽鸥公司 · 1974年创立 · 品牌授权教科书级案例</span>
+                    </div>
+                </div>
+                <div class="highlight-stats">
+                    <div class="hl-stat">
+                        <span class="hl-value">80亿$</span>
+                        <span class="hl-label">2013年全球零售额</span>
+                    </div>
+                    <div class="hl-stat">
+                        <span class="hl-value">50亿$</span>
+                        <span class="hl-label">年品牌价值（2010年）</span>
+                    </div>
+                    <div class="hl-stat">
+                        <span class="hl-value">50,000+</span>
+                        <span class="hl-label">产品SKU种类</span>
+                    </div>
+                    <div class="hl-stat">
+                        <span class="hl-value">60+</span>
+                        <span class="hl-label">覆盖国家数量</span>
+                    </div>
+                    <div class="hl-stat">
+                        <span class="hl-value">80%+</span>
+                        <span class="hl-label">美国年轻人认知度</span>
+                    </div>
+                    <div class="hl-stat">
+                        <span class="hl-value">90%</span>
+                        <span class="hl-label">利润来自品牌授权</span>
+                    </div>
+                </div>
+                <div class="highlight-extra">
+                    <p>🏆 UNICEF 儿童大使 · 🇯🇵 日本政府旅游大使 · 🎢 主题公园：东京彩虹乐园、上海 Hello Kitty 时代 · 🏅 日本角色IP人气排名第3位</p>
+                </div>
+            </div>
+
+            <!-- Grumpy Cat IP路线 -->
+            <div class="subsection">
+                <h3 class="subsection-title dark">📈 Grumpy Cat IP商业化路径</h3>
+                <div class="ip-journey">
+                    <div class="journey-step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h5>Reddit爆红</h5>
+                            <p>2012年一张照片引爆病毒传播</p>
+                        </div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h5>授权商品</h5>
+                            <p>T恤、马克杯、毛绒玩具等1082种</p>
+                        </div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h5>畅销书籍</h5>
+                            <p>纽约时报畅销书第3位</p>
+                        </div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <h5>影视作品</h5>
+                            <p>Lifetime电视电影（奥布瑞·普拉扎配音）</p>
+                        </div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="step-num">5</div>
+                        <div class="step-content">
+                            <h5>法律维权</h5>
+                            <p>商标+版权诉讼获赔71万美元</p>
+                        </div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="step-num">6</div>
+                        <div class="step-content">
+                            <h5>品牌估值</h5>
+                            <p>估值在100万至1亿美元之间</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 社会公益与展望 ========== -->
+    <section class="section" id="welfare">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">💚</span> 社会公益与心理健康影响
+            </h2>
+            <p class="section-desc">多项研究表明猫咪对人类的心血管健康、心理健康、社会孤独等问题有显著积极作用</p>
+
+            <div class="dashboard-grid cols-2">
+                <!-- 健康研究数据 -->
+                <div class="card">
+                    <h3 class="card-title">🏥 猫咪与人类健康研究数据</h3>
+                    <div class="health-grid">
+                        <div class="health-card">
+                            <span class="health-icon">❤️</span>
+                            <div>
+                                <strong>心血管保护</strong>
+                                <p>无宠物患者：11/29死亡<br>有宠物患者：仅3/52死亡</p>
+                                <small>1986年 · 92名冠心病患者研究</small>
+                            </div>
+                        </div>
+                        <div class="health-card">
+                            <span class="health-icon">🧠</span>
+                            <div>
+                                <strong>心理健康</strong>
+                                <p>动物陪伴帮助缓解焦虑和抑郁症状，保持可接受水平的快乐</p>
+                            </div>
+                        </div>
+                        <div class="health-card">
+                            <span class="health-icon">👴</span>
+                            <div>
+                                <strong>老年关怀</strong>
+                                <p>宠物为独居人士和老年人提供陪伴和社交互动替代</p>
+                            </div>
+                        </div>
+                        <div class="health-card">
+                            <span class="health-icon">💊</span>
+                            <div>
+                                <strong>流浪人群</strong>
+                                <p>许多流浪者为与宠物在一起而选择不饮酒、不吸毒</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 未来趋势 -->
+                <div class="card">
+                    <h3 class="card-title">🔮 未来六大趋势</h3>
+                    <div class="trends-list">
+                        <div class="trend-item">
+                            <span class="trend-num">01</span>
+                            <div>
+                                <strong>猫经济持续膨胀</strong>
+                                <p>城市化率提升 + 少子化 = 宠物猫作为"替代子女"</p>
+                            </div>
+                        </div>
+                        <div class="trend-item">
+                            <span class="trend-num">02</span>
+                            <div>
+                                <strong>高端化与定制化</strong>
+                                <p>天然有机猫粮、功能性配方、生食喂养</p>
+                            </div>
+                        </div>
+                        <div class="trend-item">
+                            <span class="trend-num">03</span>
+                            <div>
+                                <strong>科技赋能</strong>
+                                <p>智能猫砂盆、AI健康监测、远程兽医问诊</p>
+                            </div>
+                        </div>
+                        <div class="trend-item">
+                            <span class="trend-num">04</span>
+                            <div>
+                                <strong>可持续发展</strong>
+                                <p>昆虫蛋白替代、植物基猫粮等绿色创新</p>
+                            </div>
+                        </div>
+                        <div class="trend-item">
+                            <span class="trend-num">05</span>
+                            <div>
+                                <strong>IP跨界延伸</strong>
+                                <p>虚拟角色 → 元宇宙、NFT、AR/VR</p>
+                            </div>
+                        </div>
+                        <div class="trend-item">
+                            <span class="trend-num">06</span>
+                            <div>
+                                <strong>中国市场蓝海</strong>
+                                <p>宠物渗透率远低于欧美，巨大增长空间</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 核心结论总结 -->
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <span class="summary-icon">💰</span>
+                    <strong>经济规模</strong>
+                    <p>全球宠物食品超1100亿$，中国8年增长8倍</p>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-icon">📱</span>
+                    <strong>社交媒体统治力</strong>
+                    <p>YouTube 200万+猫视频，互联网65亿张猫图</p>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-icon">💎</span>
+                    <strong>IP价值</strong>
+                    <p>Hello Kitty年零售80亿$，品牌授权巅峰</p>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-icon">🌏</span>
+                    <strong>文化渗透力</strong>
+                    <p>猫咖从台北走向全球，Oxford词典收录</p>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-icon">💚</span>
+                    <strong>社会价值</strong>
+                    <p>心血管/心理健康/社会孤独有显著积极作用</p>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-icon">🚀</span>
+                    <strong>新兴赛道</strong>
+                    <p>宠物保险+智能设备+基因检测+殡葬</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>🐱 猫咪行业影响力与价值数据统计 | 数据来源：Wikipedia · 百度百科 · 行业公开报告</p>
+            <p class="footer-note">本文档基于2026年6月通过开源数据渠道获取的公开信息整理分析，仅供行业研究与参考。</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
